@@ -1,0 +1,24 @@
+namespace My {
+  class Net {
+    private:
+      int _x;
+    public:
+      Net(int x) {
+        _x = x;
+      }
+      int yo() {
+        return _x;
+      }
+  };
+}
+
+char str[] = "Hello World";
+
+extern "C" char* getStrOffset() {
+  return &str[0];
+}
+
+int main() {
+  My::Net net(42);
+  return net.yo();
+}
